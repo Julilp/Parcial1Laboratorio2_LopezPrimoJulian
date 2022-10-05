@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="LibreriaDeClases_LopezPrimo.Cruceros">
+    <Position X="5.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAIAAAAEAAAAEAABABAAARAIEAAIAGIACAhiBABI=</HashCode>
+      <FileName>Cruceros.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibreriaDeClases_LopezPrimo.Listas">
+    <Position X="10.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAACQAAAAAAA=</HashCode>
+      <FileName>Listas.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibreriaDeClases_LopezPrimo.PasajeroBase" Collapsed="true">
+    <Position X="14.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAACAAIAAAAAAAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>PasajeroBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibreriaDeClases_LopezPrimo.PasajeroPremium" Collapsed="true">
+    <Position X="15.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAAAAAAAAAAAAAAAQAgAAAAAAAAAAA=</HashCode>
+      <FileName>PasajeroPremium.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibreriaDeClases_LopezPrimo.PasajeroTurista" Collapsed="true">
+    <Position X="13" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PasajeroTurista.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibreriaDeClases_LopezPrimo.Pasaporte">
+    <Position X="12.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAQAgAAAAIAAAACAAAAAgAAAAAAAAAAAAAQg=</HashCode>
+      <FileName>Pasaporte.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibreriaDeClases_LopezPrimo.Salones">
+    <Position X="9" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAABAIAQAAAAAAABAAKAAoAAAAAACAAAAAAAAIA=</HashCode>
+      <FileName>Salones.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibreriaDeClases_LopezPrimo.Usuario">
+    <Position X="10.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAgAAAAAAAAAAAAIAAAAAAAAAAAiA=</HashCode>
+      <FileName>Usuario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibreriaDeClases_LopezPrimo.Viajes">
+    <Position X="7.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BYAgGA4gBBECACQAgAAGAIAAAgCAAEoIgQxAKoGBgCg=</HashCode>
+      <FileName>Viajes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="ViajesRegionales">
+    <Position X="14.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAACEAAAAAAAAIMQEAAAAFAAAAA=</HashCode>
+      <FileName>Enumerados.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ViajesExtraRegionales">
+    <Position X="16" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAARAAAAAAAAgAAAAAAAAAAAAQIBAAAAAAABAAAAAA=</HashCode>
+      <FileName>Enumerados.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -13,7 +13,10 @@ namespace LibreriaDeClases_LopezPrimo
         {
             new Usuario() {idUsuario= "julian lopez", contraseniaUsuario= "julil"},
             new Usuario() {idUsuario= "pedro martinez", contraseniaUsuario= "pedrom"},
-            new Usuario() {idUsuario= "1", contraseniaUsuario= "1"}
+            new Usuario() {idUsuario= "1", contraseniaUsuario= "1"},
+            new Usuario() {idUsuario= "admin", contraseniaUsuario= "admin"},
+
+
         };
         public static List<Cruceros> listOfCruceros = new List<Cruceros>()
         {

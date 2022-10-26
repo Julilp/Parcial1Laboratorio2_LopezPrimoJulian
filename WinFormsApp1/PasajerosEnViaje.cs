@@ -39,5 +39,10 @@ namespace WinFormsApp1
             EntradaPrograma frm = new EntradaPrograma(); 
             frm.ShowDialog();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Aqui podremos ver los pasajeros registrados en el viaje con toda su informacion", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Question);
+        }
     }
 }

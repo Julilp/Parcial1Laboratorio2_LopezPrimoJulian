@@ -36,6 +36,7 @@ namespace WinFormsApp1
             {              
                     dataGridView1.Rows.Add(item.mostrarLosViajes());
             }
+           
         }
         
 
@@ -74,7 +75,10 @@ namespace WinFormsApp1
 
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-
+            InformacionDeViaje frm = new InformacionDeViaje();
+            id = Convert.ToInt32(dataGridView1.CurrentRow.Cells["dataGridViewTextBoxColumn1"].Value);
+            frm.viajeAMostrar = Viajes.DevolverViajePorId(id);
+            frm.ShowDialog();
         }
 
         private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -125,6 +129,22 @@ namespace WinFormsApp1
                     }
                 }
             }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            AgregarViaje frm = new AgregarViaje();
+            frm.ShowDialog();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("En este form, si le damos doble click a los viajes podemos acceder a una informacion mas detallada de estos, y el boton agregar viaje nos sirve para crear un nuevo viaje.Luego tambien tenemos dos filtros para los viajes, por crucero y por estado de viaje", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Question);
         }
     }
 }

@@ -153,5 +153,10 @@ namespace WinFormsApp1
             EntradaPrograma frm = new EntradaPrograma(); 
             frm.ShowDialog();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Complete todas los campos para poder crear el nuevo viaje, para elegir un destino primero debe decidir si va a ser regional o extra regional", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Question);
+        }
     }
 }

@@ -108,5 +108,10 @@ namespace WinFormsApp1
             InformacionCruceros frm = new InformacionCruceros();
             frm.ShowDialog();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Menu principal con todas las opciones del programa", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Question);
+        }
     }
 }

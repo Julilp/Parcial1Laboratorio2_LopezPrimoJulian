@@ -112,5 +112,17 @@ namespace LibreriaDeClases_LopezPrimo
             cruceroACompletar.cantidadSalones = Salones.CantidadDeSalones(cruceroACompletar);
         }
 
+        public static void EliminarCrucero(string nombreCrucero)
+        {
+            Cruceros cruceroAEliminar = new Cruceros();
+            cruceroAEliminar = Cruceros.DevolverCrucero(nombreCrucero);
+            for (int i=0;i<Listas.listOfCruceros.Count();i++)
+            {
+                if (cruceroAEliminar== Listas.listOfCruceros[i])
+                {
+
+                }
+            }
+        }
     }
 }

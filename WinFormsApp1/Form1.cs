@@ -68,11 +68,11 @@ namespace WinFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Desea Salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
-            {
-                Application.Exit();
+             if (MessageBox.Show("¿Desea Salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
+             {
+                 Application.Exit();
 
-            }
+             }
         }
     }
 }

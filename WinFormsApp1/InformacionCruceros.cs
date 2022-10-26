@@ -62,5 +62,20 @@ namespace WinFormsApp1
             EntradaPrograma frm = new EntradaPrograma();
             frm.ShowDialog();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Aparece una lista con todos los cruceros y una vez que los elegimos nos muestra toda la informacion del mismo", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Question);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show($"Seguro que queres eliminar al siguiente crucero : {listBox1.SelectedItem}", "Informacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question)==DialogResult.Yes)
+            {
+                Listas.listOfCruceros.RemoveAt(listBox1.SelectedIndex);
+                CruceroEliminado frm = new CruceroEliminado();
+                frm.ShowDialog();
+            }
+        }
     }
 }

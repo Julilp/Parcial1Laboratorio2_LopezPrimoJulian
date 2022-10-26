@@ -124,5 +124,10 @@ namespace WinFormsApp1
                 totalHorasCrucero = 0;
             }
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Aca tenemos dos botones 'Info Destinos' y 'Info viajes' clickeando en cada uno de ellos nos aparecera la respectiva informacion", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Question);
+        }
     }
 }

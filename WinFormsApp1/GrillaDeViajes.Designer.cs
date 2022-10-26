@@ -29,11 +29,13 @@ namespace WinFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GrillaDeViajes));
             this.Column0 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.cmbEstado = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -78,15 +80,34 @@ namespace WinFormsApp1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.cmbEstado);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.CmbBarcos);
             this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Location = new System.Drawing.Point(-1, -1);
+            this.panel1.Location = new System.Drawing.Point(-1, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1039, 391);
+            this.panel1.Size = new System.Drawing.Size(1036, 387);
             this.panel1.TabIndex = 27;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // button3
+            // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.BackColor = System.Drawing.Color.Transparent;
+            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.Color.Transparent;
+            this.button3.Location = new System.Drawing.Point(907, 317);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(90, 44);
+            this.button3.TabIndex = 32;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -96,7 +117,7 @@ namespace WinFormsApp1
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Location = new System.Drawing.Point(907, 113);
+            this.button2.Location = new System.Drawing.Point(906, 109);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(99, 80);
             this.button2.TabIndex = 31;
@@ -106,12 +127,12 @@ namespace WinFormsApp1
             // cmbEstado
             // 
             this.cmbEstado.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEstado.FormattingEnabled = true;
-            this.cmbEstado.Location = new System.Drawing.Point(246, 6);
+            this.cmbEstado.Location = new System.Drawing.Point(262, 2);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(197, 23);
             this.cmbEstado.TabIndex = 30;
-            this.cmbEstado.Text = "ESTADO DE CRUCERO";
             this.cmbEstado.TextChanged += new System.EventHandler(this.cmbEstado_TextChanged);
             // 
             // button1
@@ -122,28 +143,33 @@ namespace WinFormsApp1
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Verdana", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(864, 35);
+            this.button1.Location = new System.Drawing.Point(863, 31);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(166, 47);
             this.button1.TabIndex = 29;
             this.button1.Text = "Agregar Viaje";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // CmbBarcos
             // 
             this.CmbBarcos.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.CmbBarcos.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.CmbBarcos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbBarcos.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.CmbBarcos.FormattingEnabled = true;
-            this.CmbBarcos.Location = new System.Drawing.Point(9, 6);
+            this.CmbBarcos.Location = new System.Drawing.Point(8, 2);
             this.CmbBarcos.Name = "CmbBarcos";
             this.CmbBarcos.Size = new System.Drawing.Size(197, 23);
             this.CmbBarcos.TabIndex = 28;
-            this.CmbBarcos.Text = "CRUCEROS";
             this.CmbBarcos.TextChanged += new System.EventHandler(this.CmbBarcos_TextChanged_1);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -154,8 +180,12 @@ namespace WinFormsApp1
             this.Fecha,
             this.dataGridViewTextBoxColumn1,
             this.EstadoViaje});
-            this.dataGridView1.Location = new System.Drawing.Point(9, 35);
+            this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
+            this.dataGridView1.Location = new System.Drawing.Point(8, 31);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(849, 349);
             this.dataGridView1.TabIndex = 27;
@@ -167,35 +197,41 @@ namespace WinFormsApp1
             this.Nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Nombre.HeaderText = "Nombre";
             this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
             // 
             // Partida
             // 
             this.Partida.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Partida.HeaderText = "Ciudad de Partida";
             this.Partida.Name = "Partida";
+            this.Partida.ReadOnly = true;
             // 
             // Destino
             // 
             this.Destino.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Destino.HeaderText = "Ciudad de Destino";
             this.Destino.Name = "Destino";
+            this.Destino.ReadOnly = true;
             // 
             // Fecha
             // 
             this.Fecha.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Fecha.HeaderText = "Fecha de Salida";
             this.Fecha.Name = "Fecha";
+            this.Fecha.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.HeaderText = "id";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             this.dataGridViewTextBoxColumn1.Visible = false;
             // 
             // EstadoViaje
             // 
             this.EstadoViaje.HeaderText = "Estado";
             this.EstadoViaje.Name = "EstadoViaje";
+            this.EstadoViaje.ReadOnly = true;
             // 
             // GrillaDeViajes
             // 
@@ -233,5 +269,6 @@ namespace WinFormsApp1
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn EstadoViaje;
+        private System.Windows.Forms.Button button3;
     }
 }

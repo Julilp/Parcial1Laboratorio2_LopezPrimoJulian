@@ -29,6 +29,7 @@ namespace WinFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VentaDeViajes));
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -75,6 +76,7 @@ namespace WinFormsApp1
             this.label17 = new System.Windows.Forms.Label();
             this.btnTerminar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGVViajes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -284,6 +286,7 @@ namespace WinFormsApp1
             this.DGVViajes.RowTemplate.Height = 25;
             this.DGVViajes.Size = new System.Drawing.Size(768, 186);
             this.DGVViajes.TabIndex = 16;
+            this.DGVViajes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVViajes_CellContentClick);
             this.DGVViajes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVViajes_CellDoubleClick);
             // 
             // NombreCrucero
@@ -394,6 +397,7 @@ namespace WinFormsApp1
             this.txtIva.ReadOnly = true;
             this.txtIva.Size = new System.Drawing.Size(308, 23);
             this.txtIva.TabIndex = 24;
+            this.txtIva.TextChanged += new System.EventHandler(this.txtIva_TextChanged);
             // 
             // txtGlobal
             // 
@@ -505,6 +509,7 @@ namespace WinFormsApp1
             this.txtValija2.Size = new System.Drawing.Size(160, 23);
             this.txtValija2.TabIndex = 32;
             this.txtValija2.Visible = false;
+            this.txtValija2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValija2_KeyPress);
             // 
             // label16
             // 
@@ -526,6 +531,7 @@ namespace WinFormsApp1
             this.txtValija1.Name = "txtValija1";
             this.txtValija1.Size = new System.Drawing.Size(160, 23);
             this.txtValija1.TabIndex = 34;
+            this.txtValija1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValija1_KeyPress);
             // 
             // txtNacionalidad
             // 
@@ -535,6 +541,7 @@ namespace WinFormsApp1
             this.txtNacionalidad.Name = "txtNacionalidad";
             this.txtNacionalidad.Size = new System.Drawing.Size(160, 23);
             this.txtNacionalidad.TabIndex = 36;
+            this.txtNacionalidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNacionalidad_KeyPress);
             // 
             // label15
             // 
@@ -586,6 +593,23 @@ namespace WinFormsApp1
             this.pictureBox1.TabIndex = 40;
             this.pictureBox1.TabStop = false;
             // 
+            // button3
+            // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button3.BackColor = System.Drawing.Color.Transparent;
+            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.Color.Transparent;
+            this.button3.Location = new System.Drawing.Point(801, 330);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(71, 42);
+            this.button3.TabIndex = 41;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // VentaDeViajes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -594,6 +618,7 @@ namespace WinFormsApp1
             this.BackgroundImage = global::WinFormsApp1.Properties.Resources.mejorado_3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1196, 574);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.txtCosto);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnTerminar);
@@ -693,5 +718,6 @@ namespace WinFormsApp1
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button btnTerminar;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button3;
     }
 }

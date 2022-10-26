@@ -14,13 +14,13 @@ namespace WinFormsApp1
     public partial class VentaDeViajes : Form
     {
         Viajes miViaje = new Viajes();
-        int totalPesoBodega=0;
+        int totalPesoBodega = 0;
         DateTime hoy = DateTime.Today;
         int idViaje;
         int cantGrupoFamiliar;
         int list;
-        private  List<PasajeroPremium> listOfPasajeroPremiumAux = new List<PasajeroPremium>();
-        private  List<PasajeroTurista> listOfPasajeroTuristaAux = new List<PasajeroTurista>();
+        private List<PasajeroPremium> listOfPasajeroPremiumAux = new List<PasajeroPremium>();
+        private List<PasajeroTurista> listOfPasajeroTuristaAux = new List<PasajeroTurista>();
         int tipoViaje;
 
         public VentaDeViajes()
@@ -33,10 +33,11 @@ namespace WinFormsApp1
             txtCosto.Text = "0";
             foreach (Viajes item in Listas.listOfViajes)
             {
-                if (item.FechaInicio > hoy )
+
+                if (item.FechaInicio > hoy)
                 {
                     DGVViajes.Rows.Add(item.mostrarLosViajes2());
-                }               
+                }
             }
         }
 
@@ -80,11 +81,11 @@ namespace WinFormsApp1
         }
         private void btnComenzar_Click(object sender, EventArgs e)
         {
-            if (txtGrupoFamiliar.Text!="") 
+            if (txtGrupoFamiliar.Text != "")
             {
                 cantGrupoFamiliar = int.Parse(txtGrupoFamiliar.Text);
             }
-            if (cantGrupoFamiliar <=4 && cantGrupoFamiliar >0)
+            if (cantGrupoFamiliar <= 4 && cantGrupoFamiliar > 0)
             {
                 DGVViajes.Enabled = true;
                 label14.Visible = true;
@@ -92,7 +93,7 @@ namespace WinFormsApp1
         }
         public void DGVViajes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
             idViaje = Convert.ToInt32(DGVViajes.CurrentRow.Cells["dataGridViewTextBoxColumn1"].Value);
             miViaje = Viajes.DevolverViajePorId(idViaje);
             DGVViajes.Rows.Clear();
@@ -113,7 +114,7 @@ namespace WinFormsApp1
             txtNacionalidad.Enabled = true;
             foreach (Viajes item in Listas.listOfViajes)
             {
-                if(item.IdViaje == idViaje)
+                if (item.IdViaje == idViaje)
                 {
                     DGVViajes.Rows.Add(item.mostrarLosViajes2());
                 }
@@ -126,11 +127,11 @@ namespace WinFormsApp1
             {
                 if (txtNombre.Text != "" && txtApellido.Text != "" && txtEdad.Text != "" && txtNroPasaporte.Text != "" && txtValija1.Text != "" && txtValija2.Text != "" && txtNacionalidad.Text != "" && chkBoxPremium.Checked == true)
                 {
-                    if (int.Parse(txtEdad.Text) < 100 && (int.Parse(txtValija1.Text) < 25 && int.Parse(txtValija2.Text) < 25))
+                    if (int.Parse(txtEdad.Text) < 100 && (int.Parse(txtValija1.Text) < 25 && int.Parse(txtValija2.Text) < 25) && (int.Parse(txtValija1.Text) > 0 && int.Parse(txtValija2.Text) > 0))
                     {
                         listBox1.Items.Add(txtNombre.Text);
                         PasajeroPremium pasajeroAGuardar = new PasajeroPremium(new Pasaporte(DTPVencimiento.Value.Date, DTPEmision.Value.Date, txtNacionalidad.Text, int.Parse(txtNroPasaporte.Text)), txtNombre.Text, txtApellido.Text, int.Parse(txtEdad.Text), int.Parse(txtValija1.Text), int.Parse(txtValija2.Text));
-                        listOfPasajeroPremiumAux.Add(pasajeroAGuardar);                       
+                        listOfPasajeroPremiumAux.Add(pasajeroAGuardar);
                         list = listBox1.Items.Count;
                         totalPesoBodega = totalPesoBodega + int.Parse(txtValija1.Text) + int.Parse(txtValija2.Text);
                         txtCosto.Text = ((int.Parse(txtCosto.Text) + miViaje.CostoPremium)).ToString();
@@ -151,7 +152,7 @@ namespace WinFormsApp1
                     }
                     else
                     {
-                        MessageBox.Show("Las valijas exceden su peso limite de 25Kg", "Error", MessageBoxButtons.OK);
+                        MessageBox.Show("Las valijas exceden su peso limite de 25Kg o pesan menos de 0", "Error", MessageBoxButtons.OK);
                     }
 
                 }
@@ -162,7 +163,7 @@ namespace WinFormsApp1
             }
             else
             {
-                if (tipoViaje==0 && txtNombre.Text != "" && txtApellido.Text != "" && txtEdad.Text != "" && txtNroPasaporte.Text != "" && txtValija1.Text != "" && txtNacionalidad.Text != "" && ChkBoxTurista.Checked == true)
+                if (tipoViaje == 0 && txtNombre.Text != "" && txtApellido.Text != "" && txtEdad.Text != "" && txtNroPasaporte.Text != "" && txtValija1.Text != "" && txtNacionalidad.Text != "" && ChkBoxTurista.Checked == true)
                 {
                     if (int.Parse(txtEdad.Text) < 100 && (int.Parse(txtValija1.Text) < 25))
                     {
@@ -170,7 +171,7 @@ namespace WinFormsApp1
                         PasajeroTurista pasajeroAGuardar = new PasajeroTurista(new Pasaporte(DTPVencimiento.Value.Date, DTPEmision.Value.Date, txtNacionalidad.Text, int.Parse(txtNroPasaporte.Text)), txtNombre.Text, txtApellido.Text, int.Parse(txtEdad.Text), int.Parse(txtValija1.Text));
                         listOfPasajeroTuristaAux.Add(pasajeroAGuardar);
                         list = listBox1.Items.Count;
-                        totalPesoBodega = totalPesoBodega + int.Parse(txtValija1.Text) ;
+                        totalPesoBodega = totalPesoBodega + int.Parse(txtValija1.Text);
                         txtCosto.Text = ((int.Parse(txtCosto.Text) + miViaje.CostoPremium)).ToString();
                         txtIva.Text = ((int.Parse(txtCosto.Text) * 0.21)).ToString();
                         txtGlobal.Text = ((int.Parse(txtCosto.Text) + int.Parse(txtIva.Text)).ToString());
@@ -187,8 +188,8 @@ namespace WinFormsApp1
                         }
                     }
                     else
-                    { 
-                        MessageBox.Show("Las valijas exceden su peso limite de 25Kg", "Error", MessageBoxButtons.OK);                    
+                    {
+                        MessageBox.Show("Las valijas exceden su peso limite de 25Kg", "Error", MessageBoxButtons.OK);
                     }
                 }
                 else
@@ -199,8 +200,8 @@ namespace WinFormsApp1
         }
 
         private void ChkBoxTurista_CheckedChanged(object sender, EventArgs e)
-        {          
-            if(MessageBox.Show("Esta seleccionar la clase turista, esta seguro de esto?", "Atencion", MessageBoxButtons.YesNo, MessageBoxIcon.Question)==DialogResult.Yes)
+        {
+            if (MessageBox.Show("Esta seleccionar la clase turista, esta seguro de esto?", "Atencion", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 btnSiguiente.Enabled = true;
                 tipoViaje = 0;
@@ -234,14 +235,14 @@ namespace WinFormsApp1
 
         private void btnTerminar_Click(object sender, EventArgs e)
         {
-            if(tipoViaje==1)
+            if (tipoViaje == 1)
             {
                 miViaje.VendidoPremium = miViaje.VendidoPremium + 1;
                 Viajes.ActualizarEspacio(miViaje.Crucero, miViaje);
-                if (miViaje.VendidoPremium < miViaje.Crucero.CantidadCamarotesPremium) 
-                { 
+                if (miViaje.VendidoPremium < miViaje.Crucero.CantidadCamarotesPremium)
+                {
                     miViaje.PesoBodegaOcupada = miViaje.PesoBodegaOcupada + totalPesoBodega;
-                    if(miViaje.Crucero.CapacidadBodega > totalPesoBodega)
+                    if (miViaje.Crucero.CapacidadBodega > totalPesoBodega)
                     {
                         foreach (PasajeroPremium item in listOfPasajeroPremiumAux)
                         {
@@ -249,19 +250,19 @@ namespace WinFormsApp1
                         }
                         MessageBox.Show("Se vendio correctamente todos los pasajes del grupo familiar", "Perfecto", MessageBoxButtons.OK);
                         miViaje.CamarotesDisponibles = miViaje.Crucero.CantidadCamarotes - (miViaje.VendidoPremium + miViaje.VendidoTurista);
-                        this.Close();           
+                        this.Close();
                     }
                     else
                     {
                         MessageBox.Show("El Barco ya tiene la bodega ocupada", "Perfecto", MessageBoxButtons.OK);
                     }
-                } 
+                }
             }
             else
             {
                 miViaje.VendidoTurista = miViaje.VendidoTurista + 1;
                 Viajes.ActualizarEspacio(miViaje.Crucero, miViaje);
-                if(miViaje.VendidoTurista<miViaje.Crucero.CantidadCamarotesTurista)
+                if (miViaje.VendidoTurista < miViaje.Crucero.CantidadCamarotesTurista)
                 {
                     miViaje.PesoBodegaOcupada = miViaje.PesoBodegaOcupada + totalPesoBodega;
                     if (miViaje.Crucero.CapacidadBodega > totalPesoBodega)
@@ -291,6 +292,45 @@ namespace WinFormsApp1
             if (MessageBox.Show("Esta seguro que quiere salir?", "Atencion", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 Close();
+            }
+        }
+
+        private void DGVViajes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtIva_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Debes completar todos los campos con los datos solicitados, en estos hay que tener en cuenta las siguientes cosas: Las valijas no pueden pesar mas de 25 kg, no estan permitidas personas mayores a 100 años", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Question);
+        }
+
+        private void txtNacionalidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtValija1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtValija2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
             }
         }
     }

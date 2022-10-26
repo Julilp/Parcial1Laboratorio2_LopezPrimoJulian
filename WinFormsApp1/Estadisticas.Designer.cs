@@ -29,12 +29,14 @@ namespace WinFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Estadisticas));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button7 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
             this.btnTiempocruceros = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.destino = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalFacturacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,6 +68,7 @@ namespace WinFormsApp1
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(87)))));
+            this.panel1.Controls.Add(this.button7);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.btnTiempocruceros);
@@ -75,6 +78,23 @@ namespace WinFormsApp1
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(148, 579);
             this.panel1.TabIndex = 0;
+            // 
+            // button7
+            // 
+            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button7.BackColor = System.Drawing.Color.Transparent;
+            this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
+            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button7.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.ForeColor = System.Drawing.Color.Transparent;
+            this.button7.Location = new System.Drawing.Point(0, 526);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(67, 41);
+            this.button7.TabIndex = 28;
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // pictureBox1
             // 
@@ -94,20 +114,6 @@ namespace WinFormsApp1
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
-            // 
-            // button4
-            // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.BackgroundImage = global::WinFormsApp1.Properties.Resources.inicio_negro2;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(945, 443);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(183, 136);
-            this.button4.TabIndex = 13;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // btnTiempocruceros
             // 
@@ -137,6 +143,20 @@ namespace WinFormsApp1
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // button4
+            // 
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button4.BackgroundImage = global::WinFormsApp1.Properties.Resources.inicio_negro2;
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Location = new System.Drawing.Point(945, 443);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(183, 136);
+            this.button4.TabIndex = 13;
+            this.button4.Text = "button4";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // dataGridView1
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -147,6 +167,7 @@ namespace WinFormsApp1
             this.id});
             this.dataGridView1.Location = new System.Drawing.Point(879, 0);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(244, 443);
             this.dataGridView1.TabIndex = 8;
@@ -155,16 +176,19 @@ namespace WinFormsApp1
             // 
             this.destino.HeaderText = "Destino";
             this.destino.Name = "destino";
+            this.destino.ReadOnly = true;
             // 
             // totalFacturacion
             // 
             this.totalFacturacion.HeaderText = "Total Facturado";
             this.totalFacturacion.Name = "totalFacturacion";
+            this.totalFacturacion.ReadOnly = true;
             // 
             // id
             // 
             this.id.HeaderText = "id";
             this.id.Name = "id";
+            this.id.ReadOnly = true;
             this.id.Visible = false;
             // 
             // groupBox2
@@ -314,6 +338,7 @@ namespace WinFormsApp1
             this.tiempo});
             this.dataGridViewCruceros.Location = new System.Drawing.Point(154, 357);
             this.dataGridViewCruceros.Name = "dataGridViewCruceros";
+            this.dataGridViewCruceros.ReadOnly = true;
             this.dataGridViewCruceros.RowTemplate.Height = 25;
             this.dataGridViewCruceros.Size = new System.Drawing.Size(240, 233);
             this.dataGridViewCruceros.TabIndex = 10;
@@ -323,11 +348,13 @@ namespace WinFormsApp1
             // 
             this.Crucero.HeaderText = "Crucero";
             this.Crucero.Name = "Crucero";
+            this.Crucero.ReadOnly = true;
             // 
             // tiempo
             // 
             this.tiempo.HeaderText = "Tiempo";
             this.tiempo.Name = "tiempo";
+            this.tiempo.ReadOnly = true;
             // 
             // Estadisticas
             // 
@@ -389,5 +416,6 @@ namespace WinFormsApp1
         private System.Windows.Forms.DataGridView dataGridViewCruceros;
         private System.Windows.Forms.DataGridViewTextBoxColumn Crucero;
         private System.Windows.Forms.DataGridViewTextBoxColumn tiempo;
+        private System.Windows.Forms.Button button7;
     }
 }
